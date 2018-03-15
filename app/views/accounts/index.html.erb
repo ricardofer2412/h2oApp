@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Balance</th>
-      <th>Expiration</th>
+
       <th>Account Status</th>
       <th>Expiration Date</th>
       <th>Sim Card Number</th>
@@ -19,7 +19,7 @@
     <% @accounts.each do |account| %>
       <tr>
         <td><%= account.balance %></td>
-        <td><%= account.expiration %></td>
+
         <td><%= account.accountStatus %></td>
         <td><%= account.expirationDate %></td>
         <td><%= account.simcardNumber %></td>
@@ -36,4 +36,4 @@
 <br>
 
 <%= link_to 'New Account', new_account_path %>
-<%= button_to "fetch_balance", action: "fetch_balance"%>
+<%= button_to "Update Accounts", action: "fetch_balance"%>
