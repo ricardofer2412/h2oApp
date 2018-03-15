@@ -1,0 +1,47 @@
+<%= form_with(model: account, local: true) do |form| %>
+  <% if account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+      <% account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :balance %>
+    <%= form.text_field :balance, id: :account_balance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expiration %>
+    <%= form.date_select :expiration, id: :account_expiration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accountStatus %>
+    <%= form.text_field :accountStatus, id: :account_accountStatus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expiredAccount %>
+    <%= form.text_field :expiredAccount, id: :account_expiredAccount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :simcardNumber %>
+    <%= form.text_field :simcardNumber, id: :account_simcardNumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phoneNumber %>
+    <%= form.text_field :phoneNumber, id: :account_phoneNumber %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
